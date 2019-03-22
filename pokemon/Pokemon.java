@@ -61,6 +61,9 @@ public abstract class Pokemon {
         System.out.println(this.tribeName + "は" + skill.getName() + "を繰り出した！");
         // 攻撃を発動できるか判定し、できなければnullを返す(混乱や麻痺などの自分のステータスによって出る影響)
         // タイプ一致や攻撃力などでskillのダメージ補正
+        if(!this.status.canMove()) {
+            return null;
+        }
 
         return skill;
     }
